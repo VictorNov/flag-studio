@@ -1,7 +1,196 @@
+@font-face {
+  font-family: 'Helvetica Neue Cyr';
+  src: url('./fonts/HelveticaNeueCyr-Roman.eot');
+  src: url('./fonts/HelveticaNeueCyr-Roman.eot?#iefix') format('embedded-opentype'),
+  url('./fonts/HelveticaNeueCyr-Roman.woff') format('woff'),
+  url('./fonts/HelveticaNeueCyr-Roman.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Cyr';
+  src: url('./fonts/HelveticaNeueCyr-Bold.eot');
+  src: url('./fonts/HelveticaNeueCyr-Bold.eot?#iefix') format('embedded-opentype'),
+  url('./fonts/HelveticaNeueCyr-Bold.woff') format('woff'),
+  url('./fonts/HelveticaNeueCyr-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue Cyr', sans-serif;
+  font-weight: normal;
+}
+
+.app {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.sidebar {
+  grid-column: span 3;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  max-height: 100vh;
+
+  background-color: #FAFAFA;
+  -webkit-box-shadow: 0 0 8px 2px rgba(0, 0, 0, .17);
+  -moz-box-shadow: 0 0 8px 2px rgba(0, 0, 0, .17);
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, .17);
+  z-index: 1;
+}
+
+.sidebar__filter {
+  height: 34px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex-shrink: 0;
+}
+
+.sidebar__filter-button {
+  flex-grow: 1;
+  border: 1px solid #929292;
+  outline: none;
+
+  background-color: #FFFFFF;
+  color: #929292;
+
+  font-family: 'Helvetica Neue Cyr', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: capitalize;
+
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+
+.filter-active {
+  background-color: #FF9E00;
+  color: #FFFFFF;
+  border: none;
+}
+
+.sidebar__accordion {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.sidebar__accordion-item {
+  border-bottom: 1px solid #EDEDED;
+  font-size: 14px;
+}
+
+.sidebar__accordion-header {
+  height: 76px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 25px;
+  padding-right: 40px;
+  color: #00325E;
+  font-weight: bold;
+
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+
+  &.accordion-open {
+    color: #FF9E00;
+  }
+}
+
+.accordion-icon {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-bottom: 2px solid #00325E;
+  border-left: 2px solid #00325E;
+  border-top: none;
+  border-right: none;
+  -ms-transform: translateY(-4px) rotate(-45deg);
+  transform: translateY(-4px) rotate(-45deg);
+
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+
+.accordion-open .accordion-icon {
+  -ms-transform: translateY(0px) rotate(135deg);
+  transform: translateY(0px) rotate(135deg);
+  border-color: #FF9E00;
+}
+
+.sidebar__accordion-content {
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -ms-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.sidebar__accordion-card {
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-bottom: 45px;
+
+  &:first-child {
+    margin-top: 10px;
+  }
+
+  p {
+    margin-bottom: 22px;
+  }
+}
+
+.sidebar__accordion-card-name {
+  font-weight: bold;
+  color: #00325E;
+  margin-bottom: 25px;
+}
+
+.sidebar__accordion-card-phones a {
+  text-decoration: none;
+  color: #000000;
+  margin-right: 15px;
+}
+
+.sidebar__accordion-card-email a {
+  color: #32B3E9;
+}
+
+.map-container {
+  max-height: 100vh;
+  grid-column: span 9;
+  background-color: lightblue;
 }
