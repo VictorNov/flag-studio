@@ -336,6 +336,7 @@ const mapSection = {
         radius: 12
       },
       balloonLayout: MyBalloonLayout,
+      balloonPanelMaxMapArea: 0
     })
 
     // Создаем коллекцию объектов
