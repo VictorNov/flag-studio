@@ -16,8 +16,8 @@
         }
       ],
       "email": "username@flagstudio.ru",
-      "coordinates": "[56.0010, 92.9499]",
-      "id": "1"
+      "coordinates": [56.0010, 92.9499],
+      "id": 1
     },
     {
       "name": "Офис КРАСНОЯРСК ЦЕНТР",
