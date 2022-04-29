@@ -34,16 +34,19 @@ body {
 .app {
   width: 100%;
   height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
 }
 
 // Sidebar styles
 .sidebar {
-  grid-column: span 3;
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  min-width: 200px;
+  width: 400px;
   max-height: 100vh;
 
   background-color: #FAFAFA;
@@ -51,6 +54,10 @@ body {
   -moz-box-shadow: 0 0 8px 2px rgba(0, 0, 0, .17);
   box-shadow: 0 0 8px 2px rgba(0, 0, 0, .17);
   z-index: 1;
+
+  @media screen and (max-width: 768px) {
+    width: 250px;
+  }
 }
 
 .sidebar__filter {
@@ -201,7 +208,7 @@ body {
 // Map styles
 .map-container {
   max-height: 100vh;
-  grid-column: span 9;
+  flex-grow: 1;
 
   // Make map grayscale
   canvas {
