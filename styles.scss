@@ -214,6 +214,9 @@ body {
   canvas {
     filter: grayscale(1);
   }
+  ymaps[class$='-ground-pane'] {
+    filter: grayscale(1);
+  }
 
   // Hide Copyrights
   ymaps[class$='-copyrights-pane'] {
